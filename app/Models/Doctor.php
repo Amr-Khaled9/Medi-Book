@@ -11,4 +11,7 @@ class Doctor extends Model
     public function specialty(){
         return $this->belongsTo(Specialty::class);
     }
+    public function DoctorSchedule(){
+        return $this->belongsTo(DoctorSchedule::class);
+    }
 }
