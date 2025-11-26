@@ -14,8 +14,10 @@ return new class extends Migration
         Schema::create('doctor_schedules', function (Blueprint $table) {
             $table->id();
             $table->string('day_of_week');
-            $table->time('start_time');  
+            $table->time('start_time');
             $table->time('end_time');
+            $table->unsignedInteger('max_appointments')->default(10); 
+            $table->unsignedInteger('current_appointments')->default(0); 
             $table->foreignId('doctor_id')->constrained()->onDelete('cascade');
             $table->timestamps();
         });

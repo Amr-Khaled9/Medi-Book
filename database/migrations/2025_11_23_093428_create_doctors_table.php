@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('phone');
             $table->string('email');
             $table->boolean('status')->default(1);
-            $table->json('experience');
+            $table->text('experience');
             $table->text('about');
             $table->foreignId('specialty_id')->constrained('specialties')->onDelete('cascade');
             $table->timestamps();
