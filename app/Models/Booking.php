@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class Booking extends Model
 {
     use SoftDeletes;
-    protected $fillable = ['id', 'name_patient', 'phone_patient', 'email', 'visit_type', 'notes', 'doctor_id','deleted_at', 'specialty_id'];
+    protected $fillable = ['id', 'name_patient', 'phone_patient', 'email', 'visit_type', 'notes', 'doctor_id','deleted_at', 'specialty_id','user_id'];
 
     public function doctors()
     {
@@ -36,5 +36,9 @@ class Booking extends Model
         }
 
         return $schedule;
+    }
+
+    public function user(){
+        return $this->belongsTo(User::class);
     }
 }

@@ -8,12 +8,14 @@ use App\Models\DoctorSchedule;
 use App\Models\Specialty;
 use Filament\Forms\Components\Checkbox;
 use Filament\Forms\Components\CheckboxList;
+use Filament\Forms\Components\Hidden;
 use Filament\Forms\Components\Radio;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Textarea;
 use Filament\Schemas\Components\Utilities\Set;
 use Filament\Schemas\Schema;
+use Illuminate\Support\Facades\Auth;
 
 class BookingForm
 {
@@ -64,16 +66,21 @@ class BookingForm
                         $doctorIds = DoctorSchedule::where('day_of_week', $today)->whereIn('doctor_id', $doctors)
                             ->pluck('doctor_id')
                             ->toArray();
-                        $schedule=Booking::increment_($doctorIds, $today);
+                        $schedule = Booking::increment_($doctorIds, $today);
+                        if (!$schedule) {
+                            return [];
+                        }
                         if ($schedule->current_appointments == $schedule->max_appointments) {
                             return [];
-                         }
-                        
+                        }
+
                         return Doctor::where('specialty_id', $specialtyId)
                             ->whereIn('id', $doctorIds)
                             ->pluck('name', 'id');
                     })
                     ->reactive(),
+                Hidden::make('user_id')
+                    ->default(fn() => Auth::id()),
 
             ]);
     }
