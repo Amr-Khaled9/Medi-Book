@@ -2,6 +2,7 @@
 
 namespace App\Filament\Resources\Doctors\Schemas;
 
+use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Textarea;
@@ -35,9 +36,15 @@ class DoctorForm
                     ->columnSpanFull(),
                 Select::make('specialty_id')
                     ->label('Specialty')
-                    ->relationship('specialty', 'name') 
+                    ->relationship('specialty', 'name')
+                    ->required(),
+                FileUpload::make('image')
+                    ->label('Doctor Image')
+                    ->image()                   
+                    ->disk('public')              
+                    ->directory('doctors')        
                     ->required()
 
-            ]);
+            ])->columns(2);
     }
 }
