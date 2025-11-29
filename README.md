@@ -1,4 +1,4 @@
-##🏥 MediBook — Clinic Appointment System
+🏥 MediBook — Clinic Appointment System
 
 MediBook is a modern, web-based clinic appointment management system built with Laravel.
 It streamlines the workflow between patients, doctors, and clinic staff, allowing easy browsing of specialties, doctor profiles, schedules, and appointment booking.
@@ -6,54 +6,54 @@ It streamlines the workflow between patients, doctors, and clinic staff, allowin
 🚀 Features
 👤 Authentication
 
-User Registration & Login
+• User Registration & Login
 
-Google Social Login
+• Google Social Login
 
-Role-based Access: Admin, Doctor, Receptionist, Patient
+• Role-based Access: Admin, Doctor, Receptionist, Patient
 
 🩺 Doctors & Specialties
 
-View all available medical specialties
+• View all available medical specialties
 
-Filter doctors by specialty
+• Filter doctors by specialty
 
-Full doctor profile page
+• Full doctor profile page
 
-Display working days, start time & end time
+• Display working days, start time & end time
 
 🗓️ Appointment Booking
 
-Book appointments with a selected doctor
+• Book appointments with a selected doctor
 
-Store full patient details
+• Store full patient details
 
-Auto-update schedule appointment count
+• Auto-update doctor schedule appointment count
 
-Show confirmation page after successful booking
+• Show confirmation page after successful booking
 
 📄 Admin Panel (Filament)
 
-Manage doctors
+• Manage doctors
 
-Manage specialties
+• Manage specialties
 
-Manage schedules
+• Manage schedules
 
-Manage reservations
+• Manage reservations
 
 🧩 Tech Stack
 
-Laravel 11
+• Laravel 11
 
-Blade Templates
+• Blade Templates
 
-TailwindCSS
+• TailwindCSS
 
-MySQL
+• MySQL
 
-Filament Admin Panel
+• Filament Admin Panel
 
-Livewire (optional)
+• Livewire (optional)
 
-Google OAuth
+• Google OAuth
