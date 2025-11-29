@@ -54,6 +54,4 @@ It streamlines the workflow between patients, doctors, and clinic staff, allowin
 
 • Filament Admin Panel
 
-• Livewire (optional)
-
 • Google OAuth
