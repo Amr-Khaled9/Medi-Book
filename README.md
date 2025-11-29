@@ -1,4 +1,4 @@
-🏥 MediBook — Clinic Appointment System
+##🏥 MediBook — Clinic Appointment System
 
 MediBook is a modern, web-based clinic appointment management system built with Laravel.
 It streamlines the workflow between patients, doctors, and clinic staff, allowing easy browsing of specialties, doctor profiles, schedules, and appointment booking.
