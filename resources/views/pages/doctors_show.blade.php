@@ -7,39 +7,10 @@
             <p class="text-text-muted-light dark:text-text-muted-dark text-lg font-normal leading-normal">
                 Search for specialists and book your appointment with ease.</p>
         </div>
-        <div
-            class="flex flex-col sm:flex-row justify-between items-center gap-4 p-4 rounded-xl bg-surface-light dark:bg-surface-dark shadow-subtle">
-            <div class="relative w-full flex-grow">
-                <span
-                    class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-text-muted-light dark:text-text-muted-dark">search</span>
-                <input
-                    class="w-full h-12 pl-10 pr-4 rounded-lg bg-background-light dark:bg-background-dark border border-gray-200 dark:border-gray-700 focus:ring-2 focus:ring-primary focus:border-primary transition-colors text-text-light dark:text-text-dark"
-                    placeholder="Search by doctor name or specialty..." type="text" />
-            </div>
-            <div class="flex w-full sm:w-auto gap-3 overflow-x-auto pb-2">
-                <button
-                    class="flex h-12 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-background-light dark:bg-background-dark border border-gray-200 dark:border-gray-700 px-4 hover:bg-gray-100 dark:hover:bg-gray-700/50 transition-colors">
-                    <p class="text-text-light dark:text-text-dark text-sm font-medium">All Specialties</p>
-                    <span
-                        class="material-symbols-outlined text-text-muted-light dark:text-text-muted-dark">expand_more</span>
-                </button>
-                <button
-                    class="flex h-12 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-background-light dark:bg-background-dark border border-gray-200 dark:border-gray-700 px-4 hover:bg-gray-100 dark:hover:bg-gray-700/50 transition-colors">
-                    <p class="text-text-light dark:text-text-dark text-sm font-medium">Availability</p>
-                    <span
-                        class="material-symbols-outlined text-text-muted-light dark:text-text-muted-dark">expand_more</span>
-                </button>
-                <button
-                    class="flex h-12 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-background-light dark:bg-background-dark border border-gray-200 dark:border-gray-700 px-4 hover:bg-gray-100 dark:hover:bg-gray-700/50 transition-colors">
-                    <p class="text-text-light dark:text-text-dark text-sm font-medium">Location</p>
-                    <span
-                        class="material-symbols-outlined text-text-muted-light dark:text-text-muted-dark">expand_more</span>
-                </button>
-            </div>
-        </div>
+
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
             @foreach ($doctors as $doctor)
-                <div
+                <a href="{{ route('doctor.details',  $doctor->id) }}"
                     class="flex flex-col gap-4 text-center p-6 bg-surface-light dark:bg-surface-dark rounded-xl shadow-subtle hover:shadow-lift transition-shadow duration-300">
 
                     <div class="mx-auto">
@@ -54,38 +25,14 @@
                         </p>
 
                         <p class="text-text-muted-light dark:text-text-muted-dark text-sm font-medium">
-                            {{ $specialty->name }}
+                            {{ $doctor->specialty->name }}
                         </p>
-
-                        @php
-                            $isAvailable = $results[$doctor->id] ?? false;
-                        @endphp
-
-                        <div class="inline-flex items-center justify-center gap-2 mt-2">
-                            <span
-                                class="inline-block h-2 w-2 rounded-full {{ $isAvailable ? 'bg-success' : 'bg-red-500' }}"></span>
-
-                            <p
-                                class="{{ $isAvailable ? 'text-success' : 'text-red-500' }} text-xs font-semibold uppercase tracking-wider">
-                                {{ $isAvailable ? 'Available Today' : 'Not Available' }}
-                            </p>
-                        </div>
-
-                        @if ($isAvailable)
-                            <div class="mt-3">
-                                <a href="{{ route('booking',[$doctor->id , $specialty->name ]) }}"
-                                    class="px-4 py-2 bg-primary text-white rounded-lg shadow hover:bg-primary-dark transition">
-                                    Book Now
-                                </a>
-                            </div>
-                        @endif
-
-
                     </div>
 
-                </div>
+                </a>
             @endforeach
         </div>
+
 
 
     </div>

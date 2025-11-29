@@ -42,4 +42,26 @@ class DoctorSchedule extends Model
             $record->save();
         }
     }
+
+    public static function is_Avalible_2($records)
+    {
+        
+        foreach ($records as $record) {
+        $today = strtolower(now()->format('l'));
+        $recordDay = strtolower($record->day_of_week);
+
+        if ($recordDay !== $today) {
+            return false;
+        }
+
+        if ($record->max_appointments - $record->current_appointments <= 0) {
+            return false;
+        }
+
+
+        return true;
+    }
+    }
+
+
 }

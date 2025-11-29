@@ -69,7 +69,7 @@
 
                 <!-- Desktop Navigation -->
                 <nav class="hidden md:flex flex-1 justify-center gap-8">
-                    <a href="{{ url('/') }}"
+                    <a href="{{ url('/dashboard') }}"
                         class="text-app-primary text-sm font-bold border-b-2 border-app-primary pb-1">
                         Home
                     </a>
@@ -79,7 +79,7 @@
                         About
                     </a>
 
-                    <a href="{{ url('/doctors') }}"
+                    <a href="{{ route('find.doctor') }}"
                         class="text-app-text-primary hover:text-app-primary text-sm font-medium">
                         Find a Doctor
                     </a>
