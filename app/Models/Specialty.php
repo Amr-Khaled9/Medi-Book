@@ -14,4 +14,9 @@ class Specialty extends Model
     {
         return $this->status == 1 ? 'Active' : 'Inactive';
     }
+
+    public function doctors()
+    {
+        return $this->hasMany(Doctor::class);
+    }
 }

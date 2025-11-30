@@ -1,10 +1,13 @@
 <?php
 
 use App\Http\Controllers\Auth\GoogleController;
-use App\Livewire\Settings\Appearance;
+use App\Http\Controllers\BookingController;
+use App\Http\Controllers\DoctorController;
+ use App\Livewire\Settings\Appearance;
 use App\Livewire\Settings\Password;
 use App\Livewire\Settings\Profile;
 use App\Livewire\Settings\TwoFactor;
+use App\Models\Booking;
 use Illuminate\Support\Facades\Route;
 use Laravel\Fortify\Features;
 
@@ -39,3 +42,11 @@ Route::middleware(['auth'])->group(function () {
         )
         ->name('two-factor.show');
 });
+
+
+Route::view('about','pages.about');
+Route::get('/{specialties}',[DoctorController::class, 'index']);
+Route::get('booking/{doctor}/{specialty}', [BookingController::class,'index'])->name('booking');
+Route::post('confirm',[BookingController::class,'store'])->name('booking.store');
+Route::get('doctor/show',[DoctorController::class,'show' ])->name('find.doctor');
+Route::get('doctor/details/{id}',[DoctorController::class,'details' ])->name('doctor.details');
