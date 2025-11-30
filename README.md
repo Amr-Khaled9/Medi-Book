@@ -1,57 +1,51 @@
-🏥 MediBook — Clinic Appointment System
+MediBook – Clinic Appointment System 🏥
 
-MediBook is a modern, web-based clinic appointment management system built with Laravel.
-It streamlines the workflow between patients, doctors, and clinic staff, allowing easy browsing of specialties, doctor profiles, schedules, and appointment booking.
+A web-based system for managing clinic appointments, built with Laravel and featuring my first hands-on experience using Filament.
+MediBook makes it easy for patients to book appointments with doctors, while giving administrators full control to manage clinic data efficiently.
 
-🚀 Features
-👤 Authentication
+🚀 Key Features
+🔐 Authentication System
 
-• User Registration & Login
+Standard email & password login
 
-• Google Social Login
+Google Social Login (OAuth)
 
-• Role-based Access: Admin, Doctor, Receptionist, Patient
+🩺 Specialties & Doctors
 
-🩺 Doctors & Specialties
+View all available medical specialties
 
-• View all available medical specialties
+Display all doctors (both available and unavailable)
 
-• Filter doctors by specialty
+Detailed doctor profile with essential information
 
-• Full doctor profile page
+📅 Booking & Appointment Management
 
-• Display working days, start time & end time
+Book appointments with available doctors
 
-🗓️ Appointment Booking
+Automatic doctor schedule updates after each booking
 
-• Book appointments with a selected doctor
+🛠️ Admin Panel (Filament)
 
-• Store full patient details
+Manage all tables: Users, Doctors, Bookings, Specialties, Schedules, etc.
 
-• Auto-update doctor schedule appointment count
+Real-time notifications for new bookings
 
-• Show confirmation page after successful booking
+Dashboard with Charts & Stats Overview to track clinic performance
 
-📄 Admin Panel (Filament)
+🗂️ Automation
 
-• Manage doctors
+Daily soft delete of outdated bookings
 
-• Manage specialties
+🧰 Tech Stack
 
-• Manage schedules
+Laravel 11
 
-• Manage reservations
+FilamentPHP 3
 
-🧩 Tech Stack
+Livewire
 
-• Laravel 11
+MySQL
 
-• Blade Templates
+TailwindCSS
 
-• TailwindCSS
-
-• MySQL
-
-• Filament Admin Panel
-
-• Google OAuth
+Pusher / Echo (for realtime notifications)
